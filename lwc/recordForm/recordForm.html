@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Edit Account Records" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <template if:true={showForm}>
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    record-id={recordId}
+                    fields={fields}
+                    columns="2"
+                    mode="edit"
+                    onsuccess={handleSuccess}
+                    onsubmit={handleSubmit}
+                    oncancel={handleCancel}
+                ></lightning-record-form>
+            </template>
+            <template if:false={showForm}>
+                <p>No more records to edit.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
